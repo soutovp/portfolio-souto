@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fernando Souto - Portfólio</title>
+	<meta name="author" content="Fernando Souto">
+	<meta name="keywords"
+		content="Portfólio, Desenvolvedor, Ferando Souto, HTML, CSS, Javascript, PHP, React, Next.js, Front-end">
+	<link rel="stylesheet" href="default.css">
+</head>
+
+<body>
+	<button id="botaoMenu" onclick="abrirMenu()">Menu</button>
+	<aside id="asideMenu" style="transform: translateX(0);">
+		<img src="img/perfil-fernando-souto.jpg" alt="Imagem Perfil Fernando Souto" id="img_perfil">
+		<h1>Fernando Souto</h1>
+		<ul id="menu">
+			<li class="menuItem">Sobre mim</li>
+			<li class="menuItem">Formação</li>
+			<li class="menuItem">Experiências Profissionais</li>
+			<li class="menuItem">Habilidades</li>
+			<li class="menuItem">Portfólio</li>
+			<li class="menuItem">Contato</li>
+			</a>
+		</ul>
+		<ul id="redes">
+			<a href="https://github.com/soutovp" target="_blank">
+				<li><img src="./img/github.svg" alt="Github"></li>
+			</a>
+			<a href="https://www.linkedin.com/in/fernando-andrade-souto/" target="_blank">
+				<li><img src="./img/linkedin.svg" alt="Linkedin"></li>
+			</a>
+			<a href="https://www.instagram.com/fernandoandradesouto" target="_blank">
+				<li><img src="./img/instagram.svg" alt="Instagram"></li>
+			</a>
+		</ul>
+	</aside>
+	<main>
+		<div id="sobreMim" style="display: block;">
+			<h2>Sobre mim</h2>
+			<section>
+				<article>
+					<header>
+						<h3>Sobre</h3>
+					</header>
+					<div class="article">
+						<p>Sou estudante de Análise e Desenvolvimento de Sistemas na <strong>Universidade Estácio
+								de Sá
+								( UNESA
+								)</strong>, e apaixonado por programação e tecnologia.</p>
+						<p>Bastante criativo e gosto muito de otimizar processos, onde aplico atualmente na
+							empresa que
+							trabalho ( Datelli DL Calçados ), identifico processos e utilizo de soluções simples
+							para
+							otimização.</p>
+						<p>Meu objetivo de vida e como profissional, é colaborar com orientação e informação sobre
+							a
+							situação social no Brasil e criar soluções para minorias sociais e pessoas de classe
+							social de baixa renda. Ou seja, produtos que sejam acessíveis e de boa qualidade.</p>
+					</div>
+				</article>
+			</section>
+			<section>
+				<header>
+					<h3>Objetivo</h3>
+				</header>
+				<div class="article">
+					<p>Pretendo adquirir experiência como dev, para poder criar autonomia e criar soluções com
+						qualidade
+						para a sociedade e colaborar com o nosso cenário social do país.</p>
+				</div>
+			</section>
+			<section>
+				<header>
+					<h3>Instagram</h3>
+				</header>
+				<div class="article">
+					<p>Aqui vai entrar o instagram</p>
+				</div>
+			</section>
+		</div>
+		<div id="formacao" style="display: none;">
+			<h2>Formação</h2>
+		</div>
+	</main>
+	<script>
+		const aside = document.getElementById('asideMenu')
+		const botaoMenu = document.getElementById('botaoMenu')
+		let paginaAtual = ''
+		const abrirPagina = novaPagina => {
+			if (paginaAtual === '') {
+				paginaAtual = 'sobreMim'
+			}
+			if (!document.getElementById(novaPagina)) {
+				return console.error('Nova página não encontrada.')
+			}
+			document.getElementById(paginaAtual).style.display = 'none'
+			document.getElementById(novaPagina).style.display = 'block'
+			if (window.innerWidth < 850) {
+				abrirFecharMenu()
+			}
+			paginaAtual = novaPagina
+		}
+		function abrirFecharMenu() {
+			if (window.innerWidth > 850) {
+				aside.style.transform = 'translateX(0)'
+				botaoMenu.style.display = 'none'
+			} else {
+				aside.style.transform = 'translateX(-80vw)'
+				botaoMenu.style.display = 'block'
+			}
+		}
+		function abrirMenu() {
+			if (aside.style.transform === 'translateX(-80vw)') {
+				aside.style.transform = 'translateX(0)'
+			} else {
+				aside.style.transform = 'translateX(-80vw)'
+			}
+			console.log(aside.style.transform)
+		}
+		abrirPagina('sobreMim')
+		abrirFecharMenu();
+		window.addEventListener('resize', abrirFecharMenu)
+		//MENU ITENS ---------
+		const menuItems = document.getElementsByClassName('menuItem')
+		const objMenu = {
+			'Sobre mim': 'sobreMim',
+			'Formação': 'formacao',
+			'Experiências Profissionais': 'experienciasProfissionais',
+			'Habilidades': 'habilidades',
+			'Portfólio': 'portfolio',
+			'Contato': 'contato'
+		}
+		for (item in menuItems) {
+			menuItems[item].addEventListener('click', e => {
+				console.log(`Abrindo a página: ${objMenu[e.target.innerHTML]}`)
+				abrirPagina(objMenu[e.target.innerHTML])
+			})
+		}
+		const sobreMim = document.getElementById('sobreMim')
+		//--------------------
+	</script>
+</body>
+
+</html>

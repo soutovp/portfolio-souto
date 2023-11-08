@@ -1,0 +1,158 @@
+/* RESET */
+* {
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-family: sans-serif, Arial, Helvetica;
+}
+
+body {
+	background-color: #1D1D1D;
+}
+
+#botaoMenu {
+	position: fixed;
+	z-index: 999;
+	background-color: none;
+	border: 2px solid black;
+	color: black;
+	padding: 5px;
+	margin: 15px 5px;
+}
+
+
+/* ASIDE */
+aside {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	height: 100vh;
+	background-color: #232323;
+	position: fixed;
+	transition: .5s;
+	box-shadow: 5px 0px 3px rgba(0, 0, 0, .1);
+}
+
+#img_perfil {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 5px solid black;
+	margin: 100px 0 25px 0;
+}
+
+aside h1 {
+	margin-bottom: 100px;
+	color: #E38000;
+}
+
+a {
+	text-decoration: none;
+}
+
+#menu {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+
+#menu li {
+	font-size: 1.5rem;
+	padding: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+#menu li:hover {
+	color: #E38000;
+	cursor: pointer;
+}
+
+#menu a li:hover {
+	color: #E38000;
+}
+
+#redes {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	margin-bottom: 25px;
+	/* position: absolute; */
+	/* bottom: 25px; */
+}
+
+/* MAIN */
+
+h2 {
+	text-align: center;
+	margin-top: 50px;
+
+}
+
+h3 {
+	color: #E38000
+}
+
+main section {
+	background-color: #232323;
+	width: 80%;
+	margin: 50px auto 50px auto;
+	border-radius: 5px;
+	box-shadow: 5px 5px 3px rgba(0, 0, 0, .1);
+}
+
+main section header {
+	padding: 30px 0 30px 15px;
+}
+
+main section div.article {
+	padding: 0 30px 15px 30px;
+}
+
+@media screen and (max-width: 850px) {
+	aside {
+		transform: translateX(-80vw);
+		width: 80%;
+		top: 0;
+	}
+
+	aside #menu li {
+		font-size: 1.2rem;
+	}
+
+	#img_perfil {
+		width: 100px;
+		height: 100px;
+		margin: 100px 0 25px 0;
+	}
+
+	#redes img {
+		width: 25px;
+	}
+
+	aside h1 {
+		font-size: 1.2rem;
+	}
+
+	main {
+		width: 100%;
+		left: 0;
+	}
+}
+
+
+@media screen and (min-width: 851px) {
+
+	/* MAIN */
+	main {
+		width: 70%;
+		position: absolute;
+		right: 0;
+	}
+}
