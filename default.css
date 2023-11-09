@@ -39,11 +39,11 @@ aside {
 	height: 200px;
 	border-radius: 50%;
 	border: 5px solid black;
-	margin: 100px 0 25px 0;
+	margin: 50px 0 25px 0;
 }
 
 aside h1 {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	color: #E38000;
 }
 
@@ -57,12 +57,12 @@ a {
 	flex-direction: column;
 	gap: 15px;
 	width: 100%;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 
 #menu li {
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	padding: 5px;
 	width: 100%;
 	text-align: center;
@@ -83,8 +83,10 @@ a {
 	flex-direction: row;
 	gap: 25px;
 	margin-bottom: 25px;
-	/* position: absolute; */
-	/* bottom: 25px; */
+}
+
+#redes img {
+	width: 40px;
 }
 
 /* MAIN */
