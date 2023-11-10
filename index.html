@@ -52,7 +52,8 @@
 								)</strong>, e apaixonado por programação e tecnologia.</p>
 						<p>Bastante criativo e gosto muito de otimizar processos, onde aplico atualmente na
 							empresa que
-							trabalho ( Datelli DL Calçados ), identifico processos e utilizo de soluções simples
+							trabalho ( <strong>Datelli DL Calçados</strong> ), identifico processos e utilizo de
+							soluções simples
 							para
 							otimização.</p>
 						<p>Meu objetivo de vida e como profissional, é colaborar com orientação e informação sobre
@@ -67,9 +68,8 @@
 					<h3>Objetivo</h3>
 				</header>
 				<div class="article">
-					<p>Pretendo adquirir experiência como dev, para poder criar autonomia e criar soluções com
-						qualidade
-						para a sociedade e colaborar com o nosso cenário social do país.</p>
+					<p>Tenho como objetivo poder colaborar com o cenário social do país através da tecnologia,
+						assim trazendo soluções, informação e conscientização.</p>
 				</div>
 			</section>
 			<section>
@@ -86,65 +86,21 @@
 		</div>
 		<div id="formacao" style="display: none;">
 			<h2>Formação</h2>
+			<section>
+				<div class="article">
+					<header>
+						<h3>Análise e Desenvolvimento de Sistemas</h3>
+					</header>
+					<h4>UNESA - Universidade Estácio de Sá</h4>
+					<p>07/2022 ~ 12/2024</p>
+				</div>
+			</section>
 		</div>
 	</main>
-	<script>
-		const aside = document.getElementById('asideMenu')
-		const botaoMenu = document.getElementById('botaoMenu')
-		let paginaAtual = ''
-		const abrirPagina = novaPagina => {
-			if (paginaAtual === '') {
-				paginaAtual = 'sobreMim'
-			}
-			if (!document.getElementById(novaPagina)) {
-				return console.error('Nova página não encontrada.')
-			}
-			document.getElementById(paginaAtual).style.display = 'none'
-			document.getElementById(novaPagina).style.display = 'block'
-			if (window.innerWidth < 850) {
-				abrirFecharMenu()
-			}
-			paginaAtual = novaPagina
-		}
-		function abrirFecharMenu() {
-			if (window.innerWidth > 850) {
-				aside.style.transform = 'translateX(0)'
-				botaoMenu.style.display = 'none'
-			} else {
-				aside.style.transform = 'translateX(-80vw)'
-				botaoMenu.style.display = 'block'
-			}
-		}
-		function abrirMenu() {
-			if (aside.style.transform === 'translateX(-80vw)') {
-				aside.style.transform = 'translateX(0)'
-			} else {
-				aside.style.transform = 'translateX(-80vw)'
-			}
-			console.log(aside.style.transform)
-		}
-		abrirPagina('sobreMim')
-		abrirFecharMenu();
-		window.addEventListener('resize', abrirFecharMenu)
-		//MENU ITENS ---------
-		const menuItems = document.getElementsByClassName('menuItem')
-		const objMenu = {
-			'Sobre mim': 'sobreMim',
-			'Formação': 'formacao',
-			'Experiências Profissionais': 'experienciasProfissionais',
-			'Habilidades': 'habilidades',
-			'Portfólio': 'portfolio',
-			'Contato': 'contato'
-		}
-		for (item in menuItems) {
-			menuItems[item].addEventListener('click', e => {
-				console.log(`Abrindo a página: ${objMenu[e.target.innerHTML]}`)
-				abrirPagina(objMenu[e.target.innerHTML])
-			})
-		}
-		const sobreMim = document.getElementById('sobreMim')
-		//--------------------
-	</script>
+	<script src="./js/abrirPagina.js"></script>
+	<script src="./js/abrirFecharMenu.js"></script>
+	<script src="./js/abrirMenu.js"></script>
+	<script src="./js/script.js"></script>
 </body>
 
 </html>
